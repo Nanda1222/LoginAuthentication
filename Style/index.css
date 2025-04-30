@@ -61,6 +61,8 @@ li {
   margin-top: 20px;
 }
 
+/* ---------------------------------------home */
+
 .home-container {
   display: flex;
   justify-content: center;
@@ -75,7 +77,7 @@ li {
 }
 
 .header-style {
-  background: linear-gradient(to right, #0494bc, #035bff, #8400ff);
+  background: linear-gradient(to right, #0494bc, #035bff, #ff00c3);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -101,6 +103,7 @@ li {
 }
 .heading-intro:hover {
   background: linear-gradient(to right, #2a5efc, #03afff, #9d00ff);
+  margin-right: 10px;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -108,12 +111,12 @@ li {
   font-size: 3.2em;
 }
 .intro-text {
-  color: rgb(119, 118, 118);
+  color: rgb(117, 117, 117);
   font-size: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
   border-bottom-right-radius: 20px;
-  border-right: #6cae0f solid 3px;
+  border-right: #6cae0f8a solid 3px;
 }
 
 .intro-text:hover {
@@ -136,16 +139,19 @@ li {
   padding-left: 20px;
 }
 
+#skills {
+  text-align: center;
+}
+
 .skills-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50vh;
-  width: 60vw;
+  margin: 10px;
 }
 
 .skills-container:hover {
-  width: 70%;
   transition: all 1s ease-in-out;
 }
 
@@ -153,18 +159,168 @@ li {
   color: rgb(44, 43, 43);
   font-size: 18px;
   border-left: solid 3px #f75e11;
-  width: 50%;
-  position: relative;
-  left: 20px;
   padding-left: 20px;
 }
 
+.skills-icons {
+  font-size: 25px;
+  border-left: solid 3px #747271;
+  padding: 10px;
+  margin: 10px;
+  text-align: start;
+  transition: all 1s linear;
+}
+.icons-anim {
+  animation: identifier 5s linear infinite;
+  font-size: 50px;
+}
+@keyframes identifier {
+  0% {
+    transform: rotatey(0deg);
+  }
+  100% {
+    transform: rotatey(360deg);
+  }
+}
+
+.skills-icons:hover {
+  font-size: 60px;
+  border-left: solid 3px #f711cd7d;
+  padding: 10px;
+
+  margin-left: 60px;
+  transition: all 1s linear;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 80px;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 20px;
+  background-image: linear-gradient(to right, #00c8ff5d, #035bff38, #8400ff42);
+}
+
 .skills-text:hover {
-  background: linear-gradient(to right, #2a5efc, #03afff, #9d00ff);
+  background: linear-gradient(to right, #fc432a, #03afff, #9d00ff);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.5s linear;
+}
+
+.html-text {
+  color: rgb(44, 43, 43);
+  font-size: 18px;
+  left: 10px;
+  padding-left: 20px;
+}
+.html-text:hover {
+  color: rgb(247, 97, 4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.5s linear;
+}
+
+.skills-icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 60vw;
+  margin-left: 20px;
+}
+
+.skills-icons-container:hover {
+  transition: all 1s ease-in-out;
+  width: 80vw;
+}
+
+/* ----------------------------------------Qualifications */
+
+.qualifications-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  animation: rotate 15s linear infinite;
+  transition: all 1s ease-in-out;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#qualifications {
+  height: 50vh;
+  width: 100vw;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.qualifications-container {
+  position: absolute;
+  left: 20px;
+  width: 18%;
+  height: 30%;
+
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.qualifications-container:hover {
+  animation: cardflip 1s linear 1;
+  transform: rotatey(180deg);
+}
+
+.front {
+  position: absolute;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+  background: white;
+
+  /* line-height: 300px; */
+}
+
+.front,
+.tile_container-back {
+  position: absolute;
+  height: 80%;
+  width: 100%;
+  background: white;
+  /* line-height: 300px;
+  list-style: solid 3px #f75e11; */
+  color: #03446a;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+.tile_container-back {
+  position: absolute;
+  top: 20px;
+  display: flex;
+  font-size: 22px;
+  justify-content: center;
+  align-items: center;
+  background: #03446a;
+  color: rgb(183, 219, 241);
+  transform: rotateY(180deg);
+  font-family: poppins;
+}
+@keyframes cardflip {
+  0% {
+    transform: rotatey(0deg);
+  }
+  100% {
+    transform: rotatey(180deg);
+  }
 }
 
 @media (min-width: 600px) {
